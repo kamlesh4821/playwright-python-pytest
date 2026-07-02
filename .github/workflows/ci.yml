@@ -116,25 +116,29 @@ jobs:
             reports/traces/
           retention-days: 14
 
-      - name: Notify Microsoft Teams on failure
-        if: failure()
-        run: |
-          curl -X POST "${{ secrets.TEAMS_WEBHOOK_URL }}" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "@type": "MessageCard",
-              "@context": "http://schema.org/extensions",
-              "themeColor": "FF0000",
-              "summary": "Test Run Failed",
-              "sections": [{
-                "activityTitle": "🔴 Saucedemo Automation — Test Run Failed",
-                "activitySubtitle": "Branch: ${{ github.ref_name }} | Triggered by: ${{ github.actor }}",
-                "facts": [
-                  { "name": "Repository", "value": "${{ github.repository }}" },
-                  { "name": "Branch", "value": "${{ github.ref_name }}" },
-                  { "name": "Commit", "value": "${{ github.sha }}" },
-                  { "name": "CI Run", "value": "[${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" },
-                  { "name": "Report", "value": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" }
-                ]
-              }]
-            }'
+      # Notification step — disabled (requires Microsoft Teams enterprise/business licence)
+      # To enable: add TEAMS_WEBHOOK_URL as a GitHub Secret and uncomment the block below
+      # Alternatively replace with a Slack or Discord webhook — same structure, different URL
+      #
+      # - name: Notify Microsoft Teams on failure
+      #   if: failure()
+      #   run: |
+      #     curl -X POST "${{ secrets.TEAMS_WEBHOOK_URL }}" \
+      #       -H "Content-Type: application/json" \
+      #       -d '{
+      #         "@type": "MessageCard",
+      #         "@context": "http://schema.org/extensions",
+      #         "themeColor": "FF0000",
+      #         "summary": "Test Run Failed",
+      #         "sections": [{
+      #           "activityTitle": "🔴 Saucedemo Automation — Test Run Failed",
+      #           "activitySubtitle": "Branch: ${{ github.ref_name }} | Triggered by: ${{ github.actor }}",
+      #           "facts": [
+      #             { "name": "Repository", "value": "${{ github.repository }}" },
+      #             { "name": "Branch", "value": "${{ github.ref_name }}" },
+      #             { "name": "Commit", "value": "${{ github.sha }}" },
+      #             { "name": "CI Run", "value": "[${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" },
+      #             { "name": "Report", "value": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" }
+      #           ]
+      #         }]
+      #       }'
