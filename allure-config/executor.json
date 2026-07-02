@@ -1,0 +1,10 @@
+{
+  "name": "GitHub Actions",
+  "type": "github",
+  "url": "https://github.com/kamlesh4821/playwright-python-pytest/actions",
+  "buildOrder": 1,
+  "buildName": "Saucedemo Automation",
+  "buildUrl": "https://github.com/kamlesh4821/playwright-python-pytest/actions",
+  "reportUrl": "https://kamlesh4821.github.io/playwright-python-pytest",
+  "reportName": "Saucedemo Automation Report"
+}

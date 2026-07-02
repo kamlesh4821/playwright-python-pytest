@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Test outputs
+allure-results/
+allure-report/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Playwright artifacts
+reports/screenshots/*
+reports/videos/*
+reports/traces/*
+!reports/screenshots/.gitkeep
+!reports/videos/.gitkeep
+!reports/traces/.gitkeep
+
+# Logs
+logs/*
+!logs/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.secrets.baseline
+*.baseline
+
+# Alembic
+*.pyc

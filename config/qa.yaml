@@ -1,0 +1,18 @@
+base_url: "${QA_BASE_URL}"
+browser: chromium
+headless: true
+action_timeout_ms: 15000
+navigation_timeout_ms: 45000
+screenshot_on_failure: true
+video_on_failure: false
+
+browser_args:
+  - "--no-sandbox"
+  - "--disable-dev-shm-usage"
+
+database:
+  host: "${QA_DB_HOST}"
+  port: 5432
+  name: "${QA_DB_NAME}"
+  user: "${QA_DB_USER}"
+  password: "${QA_DB_PASSWORD}"

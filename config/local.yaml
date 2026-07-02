@@ -1,0 +1,14 @@
+base_url: "https://www.saucedemo.com"
+browser: chromium
+headless: false
+action_timeout_ms: 10000
+navigation_timeout_ms: 30000
+screenshot_on_failure: true
+video_on_failure: false
+
+database:
+  host: localhost
+  port: 5432
+  name: testdb
+  user: testuser
+  password: testpass

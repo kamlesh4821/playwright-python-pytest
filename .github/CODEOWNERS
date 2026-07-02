@@ -1,0 +1,12 @@
+# Global owner — all files require review from the framework lead
+* @kamlesh4821
+
+# Framework core — extra scrutiny
+conftest.py @kamlesh4821
+config/ @kamlesh4821
+db/db_client.py @kamlesh4821
+db/migrations/ @kamlesh4821
+pages/base_page.py @kamlesh4821
+pages/base_component.py @kamlesh4821
+.github/workflows/ @kamlesh4821
+requirements.txt @kamlesh4821

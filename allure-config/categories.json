@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Product Defect",
+    "matchedStatuses": ["failed"],
+    "messageRegex": "AssertionError.*"
+  },
+  {
+    "name": "Test Defect",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*Exception.*|.*Error.*"
+  },
+  {
+    "name": "Infrastructure Issue",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*TimeoutError.*|.*ConnectionError.*|.*DatabaseException.*"
+  },
+  {
+    "name": "Known Flaky",
+    "matchedStatuses": ["failed", "broken"],
+    "traceRegex": ".*performance_glitch.*"
+  }
+]

@@ -1,0 +1,19 @@
+base_url: "${STAGING_BASE_URL}"
+browser: chromium
+headless: true
+action_timeout_ms: 20000
+navigation_timeout_ms: 60000
+screenshot_on_failure: true
+video_on_failure: false
+
+browser_args:
+  - "--no-sandbox"
+  - "--disable-dev-shm-usage"
+  - "--disable-gpu"
+
+database:
+  host: "${STAGING_DB_HOST}"
+  port: 5432
+  name: "${STAGING_DB_NAME}"
+  user: "${STAGING_DB_USER}"
+  password: "${STAGING_DB_PASSWORD}"

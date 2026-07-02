@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+exclude = ["db/migrations/"]
+
+[tool.ruff.isort]
+known-first-party = ["pages", "steps", "db", "config", "utils", "exceptions"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = ["db/migrations/"]
+
+[tool.bandit]
+skips = ["B101"]
+exclude_dirs = ["db/migrations"]
+
+[tool.commitizen]
+version = "0.1.0"
+tag_format = "v$version"
+version_files = ["pyproject.toml:version"]
+
+[tool.coverage.run]
+source = ["pages", "db", "utils", "config", "exceptions"]
+omit = ["db/migrations/*", "*/test_*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
